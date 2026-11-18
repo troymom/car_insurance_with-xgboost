@@ -1,12 +1,12 @@
-import streamlit as st
-import pandas as pd
+from pathlib import Path
 import joblib
-
+import streamlit as st
 
 # Load Pre-trained End-to-End Pipeline
 @st.cache_resource
 def load_pipeline():
-    return joblib.load('model_pipeline.joblib')
+    model_path = Path(__file__).parent / "model_pipeline.joblib"
+    return joblib.load(model_path)
 
 
 pipeline = load_pipeline()
