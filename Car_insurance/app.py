@@ -1,5 +1,6 @@
 from pathlib import Path
 import joblib
+import pandas as pd
 import streamlit as st
 
 # Load Pre-trained End-to-End Pipeline
@@ -7,7 +8,6 @@ import streamlit as st
 def load_pipeline():
     model_path = Path(__file__).parent / "model_pipeline.joblib"
     return joblib.load(model_path)
-
 
 pipeline = load_pipeline()
 
